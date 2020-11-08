@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200,300,400,500,600;700;800&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.subText {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  height: calc(100vh - 90px);
+  background-color: #131313;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navBar {
+  width: 280px;
+  height: 100%;
+  background-color: #040404;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navBar .logo {
+  padding: 1.25rem 0;
+}
+
+.navBar .logo svg {
+  max-width: 130px;
+}
+
+.navBar .logo svg path {
+  fill: white;
+}
+
+.navBar ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navBar ul li {
+  color: #b3b3b3;
+  list-style: none;
+  border-radius: 5px;
+  padding: 0.5rem  0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navBar ul li.active {
+  background: #282828;
+  color: white;
+}
+
+.navBar ul li:hover {
+  color: white;
+}
+
+.navBar ul li svg {
+  fill: currentColor;
+  margin-right: 1rem;
+}
+
+.navBar .cookies {
+  font-size: 0.6rem;
+  color: #b3b3b3;
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 2rem;
+}
+
+.navBar .cookies span {
+  display: block;
+}
+
+.outerWrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.musicControls {
+  background: #282828;
+  text-align: center;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+  position: relative;
+  border-top: 1px solid #040404;
+}
+
+.musicControls .nowPlaying {
+  height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0;
+  padding: 0px 1rem;
+}
+
+.musicControls .nowPlaying .albumCover {
+  width: 56px;
+  height: 56px;
+  margin-right: 1rem;
+}
+
+.musicControls .nowPlaying .albumCover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.musicControls .nowPlaying .artist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.musicControls .playerControls {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.musicControls .playerControls .controlButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.musicControls .playerControls .controlButtons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.musicControls .playerControls .controlButtons button:focus {
+  outline: 0 !important;
+  border: none;
+}
+
+.musicControls .playerControls .controlButtons .buttonPlay img {
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 7.7px 7.5px 7.7px 9px;
+}
+
+.upperNav {
+  background-color: #131313;
+  height: 56px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.upperNav .backForwardButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.upperNav .backForwardButtons .goBack, .upperNav .backForwardButtons .goForward {
+  cursor: pointer;
+}
+
+.upperNav .backForwardButtons .goBack svg, .upperNav .backForwardButtons .goForward svg {
+  background-color: #040404;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.upperNav .backForwardButtons .goForward {
+  margin-left: 1rem;
+}
+
+.upperNav .userProfile {
+  background-color: #282828;
+  padding: 0.5rem;
+  border-radius: 50px;
+  position: absolute;
+  right: 16rem;
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 3.4rem;
+}
+
+.main .mainContent {
+  color: white;
+}
+
+.main .mainContent .mainInner {
+  padding: 0.5rem 2rem;
+  width: 100%;
+}
+
+.main .mainContent h1,
+.main .mainContent h2 {
+  font-size: 1.8rem;
+}
+
+.cardsWrap {
+  padding-bottom: 1.8rem;
+}
+
+.cardsWrap h2 {
+  margin-bottom: 0;
+}
+
+.cardsWrap .cardsWrapInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cardsWrap .subText {
+  margin-top: 0.5rem;
+}
+
+.cardsWrap .cardsWrapInner {
+  margin-top: 0.5rem;
+}
+
+.cardsWrap .card {
+  background: #282828;
+  border-radius: 10px;
+  margin-right: 1rem;
+  width: 200px;
+  overflow: hidden;
+  padding: 1rem;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  height: 290px;
+  margin-right: .5rem .9rem;
+}
+
+.cardsWrap .card:hover .playIcon, .cardsWrap .card:hover .playlistPage .playlistPageSongs .songList li .songNumber .playIcon, .playlistPage .playlistPageSongs .songList li .songNumber .cardsWrap .card:hover .playIcon {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.cardsWrap .card .cardImage {
+  height: 160px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardsWrap .card .cardImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cardsWrap .card .cardContent {
+  padding: 0.5rem;
+}
+
+.cardsWrap .card .cardContent h3 {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: none;
+  letter-spacing: 0.6;
+  color: white;
+}
+
+.cardsWrap .card .cardContent span {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.playIcon, .playlistPage .playlistPageSongs .playlistButtons .playIcon, .playlistPage .playlistPageSongs .songList li .songNumber .playIcon {
+  background: #1db954;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  margin-left: auto;
+  opacity: 0;
+}
+
+.playIcon:hover, .playlistPage .playlistPageSongs .playlistButtons .playIcon:hover, .playlistPage .playlistPageSongs .songList li .songNumber .playIcon:hover {
+  -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.playIcon svg, .playlistPage .playlistPageSongs .playlistButtons .playIcon svg, .playlistPage .playlistPageSongs .songList li .songNumber .playIcon svg {
+  margin: auto;
+}
+
+.playlistPage {
+  background-color: #d6d6d6;
+}
+
+.playlistPage .mainInner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(40%, #121212));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), #121212 40%);
+  width: 100%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.playlistPage .playlistPageInfo {
+  text-align: center;
+  padding: 1.7rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playlistPage .playlistPageInfo .playlistPageImage {
+  width: 250px;
+  height: 250px;
+}
+
+.playlistPage .playlistPageInfo .playlistPageImage img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent {
+  text-align: left;
+  padding-left: 1.7rem;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent h1 {
+  margin: 0;
+  font-size: 7rem;
+  font-weight: bolder;
+  line-height: 1;
+  word-spacing: -20px;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent .tagline {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent .playlistPageDesc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent .playlistPageDesc p {
+  margin: 0;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent .playlistPageDesc span {
+  opacity: 0.7;
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+.playlistPage .playlistPageInfo .playlistPageContent .playlistPageDesc span:before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: white;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -10px;
+  top: 9px;
+}
+
+.playlistPage .playlistPageSongs {
+  height: 100%;
+}
+
+.playlistPage .playlistPageSongs .playlistButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playlistPage .playlistPageSongs .playlistButtons .playIcon, .playlistPage .playlistPageSongs .playlistButtons .songList li .songNumber .playIcon, .playlistPage .playlistPageSongs .songList li .songNumber .playlistButtons .playIcon {
+  opacity: 1;
+  margin-left: 0;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.playlistPage .playlistPageSongs .playlistButtons .playIcon svg, .playlistPage .playlistPageSongs .playlistButtons .songList li .songNumber .playIcon svg, .playlistPage .playlistPageSongs .songList li .songNumber .playlistButtons .playIcon svg {
+  height: 24px;
+  width: 24x;
+}
+
+.playlistPage .playlistPageSongs .icons .icon {
+  margin-left: 1.5rem;
+}
+
+.playlistPage .playlistPageSongs .icons .iconsHeart {
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.playlistPage .playlistPageSongs .songList {
+  border-top: 0.2px solid rgba(255, 255, 255, 0.13);
+  padding: 1rem 0 0 0;
+}
+
+.playlistPage .playlistPageSongs .songList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 1rem 1.8rem;
+  border-radius: 4px;
+  max-height: 56px;
+  cursor: pointer;
+}
+
+.playlistPage .playlistPageSongs .songList li .songNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playlistPage .playlistPageSongs .songList li .songNumber span {
+  font-size: 1.2rem;
+  margin-right: 1.3rem;
+}
+
+.playlistPage .playlistPageSongs .songList li .songNumber .playIcon {
+  opacity: 1;
+  margin-left: 0;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.playlistPage .playlistPageSongs .songList li .songNumber .playIcon:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.playlistPage .playlistPageSongs .songList li .songDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.playlistPage .playlistPageSongs .songList li .songDetails h3 {
+  margin: 0rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.playlistPage .playlistPageSongs .songList li .songDetails h4 {
+  opacity: 0.4;
+  margin: 0rem;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.playlistPage .playlistPageSongs .songList li .songDetails .noteIcon svg g .style-scope, .playlistPage .playlistPageSongs .songList li .songDetails .noteIcon svg g .yt-icon {
+  background-color: white;
+}
+
+.playlistPage .playlistPageSongs .songList li .songTime {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playlistPage .playlistPageSongs .songList li:hover {
+  background-color: #282828;
+}
+/*# sourceMappingURL=App.css.map */
