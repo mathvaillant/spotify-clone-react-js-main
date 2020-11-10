@@ -19,7 +19,8 @@ const Home = () => {
               <Link to={`/playlist/` + playlist.id} 
                 key={id} 
                 style={{textDecoration: 'none', 
-                marginBottom: '4rem'}
+                marginBottom: '4rem',
+                marginRight: '1rem'}
                 }>
                 <div className="card" key={id}>
                   <div className="cardImage">
