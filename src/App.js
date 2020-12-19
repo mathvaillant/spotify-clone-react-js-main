@@ -16,14 +16,14 @@ import SpotifyWebApi from 'spotify-web-api-js';
 const spotify = new SpotifyWebApi();
 
 const App = () => {
-  const [{user, token, playlists, playlist}, dispatch] = useStateValue()
+  const [{ user, token, playlists, playlist, nowPlaying }, dispatch] = useStateValue()
 
   // Run code based on a given condition
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = '';
     const _token = hash.access_token;
-  
+
     if (_token) {
       dispatch({
         type: 'SET_TOKEN',
@@ -65,14 +65,18 @@ const App = () => {
         token ? (
           <>
             <div className="App">
-              <Nav spotify={spotify}/>
-              <Main spotify={spotify}/>
+              <Nav spotify={spotify} />
+              <Main spotify={spotify} />
             </div>
-            <MusicControls spotify={spotify}/>
+            {
+              nowPlaying && (
+                <MusicControls spotify={spotify} />
+              )
+            }
           </>
         ) : (
-          <Login />
-        )
+            <Login />
+          )
       }
     </div>
   );

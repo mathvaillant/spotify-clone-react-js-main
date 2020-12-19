@@ -114,7 +114,7 @@ body {
 }
 
 .outerWrap {
-  background: grey;
+  background: $greyDark;
   height: 100vh;
   min-height: 100%;
 }
@@ -128,6 +128,14 @@ body {
   height: 90px;
   width: 100%;
   padding: 20px;
+
+  .noSong {
+    content: '' !important;
+    width: 0.1 !important;
+    height: 0.1 !important;
+    z-index: -1 !important;
+    opacity: 0 !important;
+  }
   
   .nowPlaying {
     flex: 0.3;
